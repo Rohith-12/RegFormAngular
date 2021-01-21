@@ -1,0 +1,250 @@
+<p>professionalform works!</p>
+
+<section class="section__main u-margin-top-medium">
+  &nbsp;
+
+  <form class="section__main__form" #formrefer="ngForm">
+    <div class="section__main__form__row">
+      <label class="section__main__form__label"
+        >Name<span class="complusorymark">*</span></label
+      >
+
+      <div class="section__main__form__content">
+        <input
+          ignore-type=""
+          type="text"
+          class="section__form__input__skin section__form__input"
+          name="Name"
+          placeholder="Enter your full name"
+          id="fname"
+          maxlength="35"
+          autocomplete="off"
+          required
+          ngModel
+          #name="ngModel"
+          [ngClass]="{ border: formrefer.submitted && !name.valid }"
+        />
+        <div
+          class="section__main__form__error"
+          *ngIf="formrefer.submitted && !name.valid"
+        >
+          Please specify your Name
+        </div>
+      </div>
+    </div>
+
+    <div class="section__main__form__row">
+      <label class="section__main__form__label"
+        >Email ID<span class="complusorymark">*</span></label
+      >
+      <!-- (keyup.enter)="update(first.value)"   (blur)="update(first.value)"-->
+      <div class="section__main__form__content">
+        <input
+          ignore-type=""
+          type="email"
+          class="section__form__input__skin section__form__input"
+          name="Email"
+          placeholder="Enter your active email id to receive relevant jobs"
+          autocomplete="off"
+          id="email"
+          ngModel
+          #first="ngModel"
+          email
+          required
+          [ngClass]="{
+            border:
+              (formrefer.submitted && !first.valid) ||
+              (first.touched && !first.value)
+          }"
+        />
+
+        <div
+          class="section__main__form__error"
+          *ngIf="
+            (formrefer.submitted && !first.value) ||
+            (first.touched && !first.value)
+          "
+        >
+          Please specify your email ID
+        </div>
+        <div class="section__main__form__error">
+          <span *ngIf="first.touched && !first.valid && first.value"
+            >{{ value }} is Not a Valid Email Id</span
+          >
+        </div>
+
+        <div
+          class="section__main__form__error section__main__form__error__email"
+        ></div>
+      </div>
+    </div>
+
+    <div class="section__main__form__row">
+      <label class="section__main__form__label"
+        >Mobile number<span class="complusorymark">*</span></label
+      >
+
+      <div class="section__main__form__content">
+        <input
+          ignore-type=""
+          type="text"
+          class="section__form__input__skin section__form__input"
+          name="fname"
+          placeholder="Enter Phone Number"
+          name="number"
+          minlength="6"
+          maxlength="40"
+          autocomplete="off"
+          id="Mobilenumber"
+          ngModel
+          #second="ngModel"
+          required
+          [ngClass]="{
+            border:
+              (formrefer.submitted && !second.valid) ||
+              (second.touched && !second.value)
+          }"
+        />
+        <div
+          class="section__main__form__error"
+          *ngIf="
+            (formrefer.submitted && !second.valid) ||
+            (second.touched && !second.value)
+          "
+        >
+          Please specify your Mobile Number
+        </div>
+
+        <div
+          class="section__main__form__error section__main__form__error__mobile"
+        ></div>
+      </div>
+    </div>
+
+    <div class="section__main__form__row">
+      <label class="section__main__form__label"
+        >Total Work Experience<span class="complusorymark">*</span></label
+      >
+
+      <div class="section__main__form__content">
+        <select
+          class="section__form__input__skin section__main__form__select professional_form_select"
+          name="city"
+          id="location"
+          required
+          ngModel
+          #select="ngModel"
+          [ngClass]="{ border: formrefer.submitted && !select.valid }"
+        >
+          <option disabled selected>select</option>
+          <option value="Albania">1</option>
+          <option value="Algeria">2</option>
+          <option value="American Samoa">3</option>
+          <option value="Andorra">4</option>
+          <option value="Angola">5</option>
+          <option value="Anguilla">6</option>
+          <option value="Antigua & Barbuda">7</option>
+          <option value="Argentina">8</option>
+          <option value="Armenia">9</option>
+          <option value="Armenia">10</option>
+        </select>
+        <span class="section__main__form__label proffessional_form_selectlabel">
+          Year(s)
+        </span>
+        <select
+          class="section__form__input__skin section__main__form__select professional_form_select"
+          name="city"
+          id="location"
+          required
+          ngModel
+          #select="ngModel"
+          [ngClass]="{ border: formrefer.submitted && !select.valid }"
+        >
+          <option disabled selected>select</option>
+          <option value="Albania">1</option>
+          <option value="Algeria">2</option>
+          <option value="American Samoa">3</option>
+          <option value="Andorra">4</option>
+          <option value="Angola">5</option>
+          <option value="Anguilla">6</option>
+          <option value="Antigua & Barbuda">7</option>
+          <option value="Argentina">8</option>
+          <option value="Armenia">9</option>
+          <option value="Armenia">10</option>
+        </select>
+        <span class="section__main__form__label proffessional_form_selectlabel">
+          Month(s)
+        </span>
+        <!-- <div
+          class="section__main__form__error"
+          *ngIf="formrefer.submitted && !formrefer.valid"
+        >
+          Please specify your location
+        </div> -->
+      </div>
+    </div>
+
+    <div class="section__main__form__row">
+      <label class="section__main__form__label">Upload Resume</label>
+
+      <div class="section__main__form__content">
+        <span class="up upload" #upload2>
+          <span class="opa">
+            Upload<input
+              type="file"
+              accept=".doc,.docx,.rtf,.pdf"
+              ngModel
+              name="file"
+            />
+            <!-- (change)="fileupload($event)" -->
+            <!-- <app-spinner *ngIf="upload"></app-spinner> -->
+          </span>
+        </span>
+        <!-- <app-spinner *ngIf="upload" #upload3></app-spinner> -->
+
+        <span class="upload__span">-Or-</span>
+        <a href="" class="upload__link">copy-paste your resume here</a>
+      </div>
+      <!-- <div class="filemessage" *ngIf="sucessmessage">
+        File uploaded successfully
+      </div> -->
+    </div>
+
+    <div class="section__main__form__row">
+      <label class="section__main__form__label">&nbsp;</label>
+
+      <div class="section__main__form__content">
+        <!-- *ngIf="res"  want to put inside the textarea -->
+        <textarea
+          class="section__form__input__skin textarea"
+          name="textarea"
+          placeholder="Paste your resume here"
+          maxlength="10000"
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="section__main__form__row">
+      <label class="section__main__form__label">&nbsp;</label>
+
+      <div class="section__main__form__content">
+        <div class="checkbox">
+          <input type="checkbox" value="true" checked="checked" />
+          <span
+            ><label class="checkbox__label checkbox__label2"
+              >I agreed to the<span class="checkbox__span"
+                >Terms and Conditions</span
+              >governing the use of bix.com</label
+            ></span
+          >
+        </div>
+
+        <div class="regsiter_now u-margin-top-medium">
+          <button type="submit" class="regsiter_now__bttn" name="submit">
+            Register Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

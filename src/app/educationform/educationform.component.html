@@ -1,0 +1,507 @@
+<p>professionalform works!</p>
+
+<section class="section__main u-margin-top-medium">
+  &nbsp;
+  <!-- (ngSubmit)="submitform(formrefer.value)" -->
+  <form class="section__main__form" #formrefer="ngForm">
+    <div class="section__main__form__row">
+      <label class="section__main__form__label"
+        >Highest Qualification<span class="complusorymark">*</span></label
+      >
+
+      <div class="section__main__form__content">
+        <!-- <input
+          ignore-type=""
+          type="text"
+          class="section__form__input__skin section__form__input"
+          name="Name"
+          placeholder="Enter your full name"
+          id="fname"
+          maxlength="35"
+          autocomplete="off"
+          required
+          ngModel
+          #name="ngModel"
+          [ngClass]="{ border: formrefer.submitted && !name.valid }"
+        /> -->
+        <select
+          #qualification
+          ngModel="qualification"
+          name="Qualification"
+          class="section__form__input__skin section__form__input"
+          (change)="selecthigh($event.target.value)"
+        >
+          <option>select Highest Qualification</option>
+          <option *ngFor="let qual of HigestQulification">
+            {{ qual.name }}
+          </option>
+        </select>
+
+        <!-- <div
+          class="section__main__form__error"
+          *ngIf="formrefer.submitted && !name.valid"
+        >
+          Please specify your Name
+        </div> -->
+      </div>
+    </div>
+
+    <div class="section__main__form__row">
+      <label class="section__main__form__label"
+        >Course<span class="complusorymark">*</span></label
+      >
+      <!-- (keyup.enter)="update(first.value)"   (blur)="update(first.value)"-->
+      <div class="section__main__form__content">
+        <!-- <input
+          ignore-type=""
+          type="email"
+          class="section__form__input__skin section__form__input"
+          name="Email"
+          placeholder="Enter your active email id to receive relevant jobs"
+          autocomplete="off"
+          id="email"
+          ngModel
+          #first="ngModel"
+          email
+          required
+          [ngClass]="{
+            border:
+              (formrefer.submitted && !first.valid) ||
+              (first.touched && !first.value)
+          }"
+        /> -->
+
+        <select
+          class="section__form__input__skin section__form__input"
+          (change)="course($event.target.value)"
+        >
+          <option>Course</option>
+          <option *ngFor="let course of courses">
+            {{ course.name }}
+          </option>
+        </select>
+
+        <!-- <div
+          class="section__main__form__error"
+          *ngIf="
+            (formrefer.submitted && !first.value) ||
+            (first.touched && !first.value)
+          "
+        >
+          Please specify your email ID
+        </div> -->
+        <!-- <div class="section__main__form__error">
+          <span *ngIf="first.touched && !first.valid && first.value"
+            >is Not a Valid Email Id</span
+          >
+           {{ value }}  to be in email is not valid 
+        </div> -->
+
+        <div
+          class="section__main__form__error section__main__form__error__email"
+        ></div>
+      </div>
+    </div>
+
+    <div class="section__main__form__row">
+      <label class="section__main__form__label"
+        >Specialization<span class="complusorymark">*</span></label
+      >
+
+      <div class="section__main__form__content">
+        <!-- <input
+          ignore-type=""
+          type="text"
+          class="section__form__input__skin section__form__input"
+          name="fname"
+          placeholder="Enter Phone Number"
+          name="number"
+          minlength="6"
+          maxlength="40"
+          autocomplete="off"
+          id="Mobilenumber"
+          ngModel
+          #second="ngModel"
+          required
+          [ngClass]="{
+            border:
+              (formrefer.submitted && !second.valid) ||
+              (second.touched && !second.value)
+          }"
+        /> -->
+        <!-- <div
+          class="section__main__form__error"
+          *ngIf="
+            (formrefer.submitted && !second.valid) ||
+            (second.touched && !second.value)
+          "
+        >
+          Please specify your Mobile Number
+        </div> -->
+
+        <select class="section__form__input__skin section__form__input">
+          <option>Course</option>
+          <option *ngFor="let specs of spec">
+            {{ specs }}
+          </option>
+        </select>
+
+        <div
+          class="section__main__form__error section__main__form__error__mobile"
+        ></div>
+      </div>
+    </div>
+
+    <div class="section__main__form__row">
+      <label class="section__main__form__label"
+        >University/College<span class="complusorymark">*</span></label
+      >
+
+      <div class="section__main__form__content">
+        <input
+          ignore-type=""
+          type="text"
+          class="section__form__input__skin section__form__input"
+          name="fname"
+          placeholder="Insitute name"
+          name="number"
+          minlength="6"
+          maxlength="40"
+          autocomplete="off"
+          id="Insitute name"
+          ngModel
+          #second="ngModel"
+          required
+          [ngClass]="{
+            border:
+              (formrefer.submitted && !second.valid) ||
+              (second.touched && !second.value)
+          }"
+        />
+
+        <!-- <div
+          class="section__main__form__error"
+          *ngIf="formrefer.submitted && !formrefer.valid"
+        >
+          Please specify your location
+        </div> -->
+      </div>
+    </div>
+
+    <div class="section__main__form__row">
+      <label class="section__main__form__label">Course Type</label>
+
+      <div class="section__main__form__content">
+        <div class="eduction_form_label">
+          &nbsp;
+
+          <input type="checkbox" id="fulltime" class="eduction_form_radio" />
+          <label for="fulltime" class="eduction_form_text" for="fulltime"
+            >Full Time</label
+          >
+          <input type="checkbox" id="Part Time" class="eduction_form_radio" />
+          <label for="fulltime" class="eduction_form_text" for="Part Time"
+            >Part Time</label
+          >
+
+          <input type="checkbox" id="Coressponds" class="eduction_form_radio" />
+          <label for="fulltime" class="eduction_form_text" for="Coressponds"
+            >Coressponds</label
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="section__main__form__row">
+      <label class="section__main__form__label">Passing Year</label>
+
+      <div class="section__main__form__content">
+        <!-- *ngIf="res"  want to put inside the textarea -->
+        <select
+          class="section__form__input__skin section__main__form__select"
+          name="city"
+          id="location"
+          required
+          ngModel
+          #select="ngModel"
+          [ngClass]="{ border: formrefer.submitted && !select.valid }"
+        >
+          <option disabled selected>Tell us about your current location</option>
+          <option value="Albania">Chennai</option>
+          <option value="Algeria">Bangalore</option>
+          <option value="American Samoa">Mumbai</option>
+          <option value="Andorra">Kolkata</option>
+          <option value="Angola">Delhi</option>
+          <option value="Anguilla">Hyderabad/Secunderabad</option>
+          <option value="Antigua & Barbuda">Gurgaon</option>
+          <option value="Argentina">Noida</option>
+          <option value="Armenia">Ahmedabad</option>
+          <option value="Armenia">Pune</option>
+        </select>
+
+        <div
+          class="section__main__form__error"
+          *ngIf="formrefer.submitted && !formrefer.valid"
+        >
+          Please specify your Year
+        </div>
+      </div>
+    </div>
+    <div
+      class="eduction_form_addmore u-margin-top-huge"
+      *ngIf="qualification.value"
+      #education
+    >
+      <div class="ff" *ngIf="option">
+        <div class="section__main__form__row">
+          <label class="section__main__form__label">&nbsp;</label>
+          <div class="section__main__form__content">
+            <div class="education__form__otheropt">
+              <p class="gobal__para">Other Education</p>
+              <div class="gobal__para" (click)="othereducation()">
+                <i class="fas fa-times"></i>
+              </div>
+
+              <!-- <input type="checkbox" name="clickcheck" ngModel #checkme />
+            <label class="gobal__para"> <i class="fas fa-times"></i></label> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="section__main__form__row">
+          <label class="section__main__form__label"
+            >Highest Qualification<span class="complusorymark">*</span></label
+          >
+
+          <div class="section__main__form__content">
+            <select
+              class="section__form__input__skin section__form__input"
+              (change)="selecthigh($event.target.value)"
+            >
+              <option>select Highest Qualification</option>
+              <option *ngFor="let qual of HigestQulification">
+                {{ qual.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section__main__form__row">
+          <label class="section__main__form__label"
+            >Course<span class="complusorymark">*</span></label
+          >
+          <!-- (keyup.enter)="update(first.value)"   (blur)="update(first.value)"-->
+          <div class="section__main__form__content">
+            <!-- <input
+          ignore-type=""
+          type="email"
+          class="section__form__input__skin section__form__input"
+          name="Email"
+          placeholder="Enter your active email id to receive relevant jobs"
+          autocomplete="off"
+          id="email"
+          ngModel
+          #first="ngModel"
+          email
+          required
+          [ngClass]="{
+            border:
+              (formrefer.submitted && !first.valid) ||
+              (first.touched && !first.value)
+          }"
+        /> -->
+
+            <select
+              class="section__form__input__skin section__form__input"
+              (change)="course($event.target.value)"
+            >
+              <option>Course</option>
+              <option *ngFor="let course of courses">
+                {{ course.name }}
+              </option>
+            </select>
+
+            <!-- <div
+          class="section__main__form__error"
+          *ngIf="
+            (formrefer.submitted && !first.value) ||
+            (first.touched && !first.value)
+          "
+        >
+          Please specify your email ID
+        </div> -->
+            <!-- <div class="section__main__form__error">
+          <span *ngIf="first.touched && !first.valid && first.value"
+            >is Not a Valid Email Id</span
+          >
+           {{ value }}  to be in email is not valid 
+        </div> -->
+
+            <div
+              class="section__main__form__error section__main__form__error__email"
+            ></div>
+          </div>
+        </div>
+
+        <div class="section__main__form__row">
+          <label class="section__main__form__label"
+            >Specialization<span class="complusorymark">*</span></label
+          >
+
+          <div class="section__main__form__content">
+            <!-- <input
+          ignore-type=""
+          type="text"
+          class="section__form__input__skin section__form__input"
+          name="fname"
+          placeholder="Enter Phone Number"
+          name="number"
+          minlength="6"
+          maxlength="40"
+          autocomplete="off"
+          id="Mobilenumber"
+          ngModel
+          #second="ngModel"
+          required
+          [ngClass]="{
+            border:
+              (formrefer.submitted && !second.valid) ||
+              (second.touched && !second.value)
+          }"
+        /> -->
+            <!-- <div
+          class="section__main__form__error"
+          *ngIf="
+            (formrefer.submitted && !second.valid) ||
+            (second.touched && !second.value)
+          "
+        >
+          Please specify your Mobile Number
+        </div> -->
+
+            <select class="section__form__input__skin section__form__input">
+              <option>Course</option>
+              <option *ngFor="let specs of spec">
+                {{ specs }}
+              </option>
+            </select>
+
+            <div
+              class="section__main__form__error section__main__form__error__mobile"
+            ></div>
+          </div>
+        </div>
+
+        <div class="section__main__form__row">
+          <label class="section__main__form__label"
+            >University/College<span class="complusorymark">*</span></label
+          >
+
+          <div class="section__main__form__content">
+            <input
+              ignore-type=""
+              type="text"
+              class="section__form__input__skin section__form__input"
+              name="fname"
+              placeholder="Insitute name"
+              name="number"
+              minlength="6"
+              maxlength="40"
+              autocomplete="off"
+              id="Insitute name"
+              ngModel
+              #second="ngModel"
+              required
+              [ngClass]="{
+                border:
+                  (formrefer.submitted && !second.valid) ||
+                  (second.touched && !second.value)
+              }"
+            />
+
+            <!-- <div
+          class="section__main__form__error"
+          *ngIf="formrefer.submitted && !formrefer.valid"
+        >
+          Please specify your location
+        </div> -->
+          </div>
+        </div>
+
+        <div class="section__main__form__row">
+          <label class="section__main__form__label">Course Type</label>
+
+          <div class="section__main__form__content">
+            <div class="eduction_form_label">
+              &nbsp;
+
+              <input
+                type="checkbox"
+                id="fulltime"
+                class="eduction_form_radio"
+              />
+              <label for="fulltime" class="eduction_form_text" for="fulltime"
+                >Full Time</label
+              >
+              <input
+                type="checkbox"
+                id="Part Time"
+                class="eduction_form_radio"
+              />
+              <label for="fulltime" class="eduction_form_text" for="Part Time"
+                >Part Time</label
+              >
+
+              <input
+                type="checkbox"
+                id="Coressponds"
+                class="eduction_form_radio"
+              />
+              <label for="fulltime" class="eduction_form_text" for="Coressponds"
+                >Coressponds</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="section__main__form__row">
+          <label class="section__main__form__label">Passing Year</label>
+
+          <div class="section__main__form__content">
+            <!-- *ngIf="res"  want to put inside the textarea -->
+            <select
+              class="section__form__input__skin section__main__form__select"
+              name="city"
+              id="location"
+              required
+              ngModel
+              #select="ngModel"
+              [ngClass]="{ border: formrefer.submitted && !select.valid }"
+            >
+              <option disabled selected
+                >Tell us about your current location</option
+              >
+              <option value="Albania">Chennai</option>
+              <option value="Algeria">Bangalore</option>
+              <option value="American Samoa">Mumbai</option>
+              <option value="Andorra">Kolkata</option>
+              <option value="Angola">Delhi</option>
+              <option value="Anguilla">Hyderabad/Secunderabad</option>
+              <option value="Antigua & Barbuda">Gurgaon</option>
+              <option value="Argentina">Noida</option>
+              <option value="Armenia">Ahmedabad</option>
+              <option value="Armenia">Pune</option>
+            </select>
+
+            <div
+              class="section__main__form__error"
+              *ngIf="formrefer.submitted && !formrefer.valid"
+            >
+              Please specify your Year
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

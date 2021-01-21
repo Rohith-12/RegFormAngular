@@ -1,0 +1,291 @@
+/* You can add global styles to this file, and also import other style files */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.gobal__para {
+  font-size: 1.6rem;
+  line-height: 1.57;
+  color: #707070;
+  margin: 0;
+}
+
+.links__content:link,
+.links__content:visited {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.u-margin-top-tiny {
+  margin-top: 1rem;
+}
+
+.u-margin-top-small {
+  margin-top: 2rem;
+}
+
+.u-margin-top-medium {
+  margin-top: 4rem;
+}
+
+.u-margin-top-big {
+  margin-top: 6rem;
+}
+
+.u-margin-top-huge {
+  margin-top: 12rem;
+}
+
+.u-margin-bottom-tiny {
+  margin-bottom: 0.8rem;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 2rem;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 6rem;
+}
+
+.u-margin-left-small {
+  margin-left: 2rem;
+}
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row [class^="col-"] {
+  float: left;
+}
+.row [class^="col-"]:not(:last-child) {
+  margin-right: 6rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .row [class^="col-"]:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 6rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .row [class^="col-"] {
+    width: 100% !important;
+  }
+}
+.row .col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+
+.section__form {
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  width: 60%;
+  vertical-align: baseline;
+}
+
+.section__form__input__skin {
+  border: 1px solid #dfdfdf;
+  margin-left: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.6rem;
+  background-color: white, #3b3b3b;
+  pointer-events: all;
+  cursor: pointer;
+}
+.section__form__input__skin::placeholder {
+  font-size: 1.5rem;
+  color: #707070;
+}
+
+.section__main__form__row {
+  margin-bottom: 20px;
+}
+.section__main__form__row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.section__main__form__label {
+  width: 26%;
+  text-align: right;
+  float: left;
+  padding-right: 15px;
+  padding: 10px 0;
+  color: #707070;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.section__main__form__content {
+  width: 47%;
+  text-align: left;
+  float: left;
+}
+
+.section__main__form__error {
+  text-align: center;
+  color: red;
+  font-size: 1.4rem;
+}
+
+.section__main__form__select {
+  color: #707070;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+.section__main__form__select option {
+  color: #707070;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.checkbox {
+  margin-left: 3rem;
+}
+.checkbox__label {
+  font-size: 1.4rem;
+  color: #707070;
+  vertical-align: center;
+  margin-left: 1rem;
+}
+.checkbox__span {
+  color: #27a7d4;
+}
+
+.upload {
+  padding: 1rem 2.5rem;
+  border: 0;
+  border-radius: 2px;
+  background-color: #1bbc9b;
+  margin-left: 2rem;
+  color: #fff;
+  width: 165px;
+  height: 42px;
+}
+.upload__span {
+  margin: 0 2rem;
+  font-size: 1.3rem;
+}
+.upload__link {
+  text-decoration: none;
+  color: #27a7d4;
+  margin-left: 1rem;
+  font-size: 1.4rem;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.regsiter_now {
+  text-align: center;
+}
+.regsiter_now__bttn {
+  padding: 1.6rem 3rem;
+  background-color: #27a7d4;
+  border: none;
+  border-radius: 3px;
+  width: 50%;
+  color: #fff;
+}
+
+.border {
+  border: 1px solid red;
+}
+
+.complusorymark {
+  color: red;
+}
+
+.inputupload {
+  position: relative;
+  top: 1rem;
+}
+
+.up input[type="file"] {
+  opacity: 0;
+
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.up {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.filemessage {
+  font-size: 1.5rem;
+  color: #449d44;
+  vertical-align: baseline;
+}
+
+.proffessional_form_selectlabel {
+  float: none;
+  margin: 0 4.5rem 0 1.2rem;
+}
+
+.professional_form_select {
+  max-width: 20%;
+}

@@ -1,0 +1,31 @@
+.eduction_form_radio {
+  position: relative;
+  left: 2rem;
+  visibility: hidden;
+}
+
+.eduction_form_radio:checked + .eduction_form_text {
+  background: #1bbc9b;
+  border-color: #1bbc9b;
+  color: #fff;
+}
+.eduction_form_label {
+  display: flex;
+  width: auto;
+  vertical-align: top;
+  margin-left: 1.5rem;
+}
+
+.eduction_form_text {
+  min-width: 135px;
+  padding: 9.5px 9px;
+  font-size: 1.5rem;
+  position: relative;
+
+  text-align: center;
+  border: 1px solid #dfdfdf;
+}
+.education__form__otheropt {
+  display: flex;
+  justify-content: space-between;
+}

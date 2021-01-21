@@ -1,0 +1,58 @@
+.section__main {
+  width: 990px;
+  margin: 5rem auto;
+}
+.section__main__contentpara {
+  text-align: center;
+}
+.section__main__para {
+  text-align: center;
+}
+.section__main__para__span {
+  display: block;
+}
+.section__main__job-selection {
+  width: 60%;
+  margin: 5rem auto;
+}
+.section__main__job-selection__type__icon {
+  font-size: 13rem;
+}
+.section__main__job-selection__button {
+  color: #fff;
+  background-color: #f80;
+  border: none;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: 0;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.lower__content__span {
+  font-size: 1.7rem;
+}
+
+.lower__content__para {
+  font-weight: 400;
+}
+
+.lower__content__sprator {
+  border-right: 1px solid #707070;
+  margin: 0 15px;
+}
+
+.lower__content__list {
+  width: 100%;
+  list-style: none;
+}
+
+.lower__content__items {
+  text-align: center;
+  padding: 0.3rem 0;
+  font-size: 1.5rem;
+}
